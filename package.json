@@ -1,0 +1,11 @@
+{
+  "name": "do_boond_packages",
+  "version": "1.0.0",
+  "dependencies": {
+    "jsonwebtoken": "^7.2.1",
+    "express": "^4.14.0",
+    "password-hash" : "^1.2.2",
+    "body-parser" : "^1.15.2",
+    "mysql" : "^2.12.0"
+  }
+}

@@ -1,0 +1,17 @@
+.column{
+	width : 420px;
+	max-width: 420px;
+	height: 420px;
+	max-height: 420px;
+	padding: 5px;
+	display: inline-block;
+}
+
+.col-pic{
+	width: auto;
+	height: 200px;
+}
+.col-head{
+	height: 122px;
+	width: 384px;
+}

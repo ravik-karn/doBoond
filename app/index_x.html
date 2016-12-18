@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="DoBoondApp" ng-controller="mainCtrl">
+
+<head>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="http://rawgit.com/daniel-nagy/md-data-table/master/dist/md-data-table.css">
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-messages.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://rawgit.com/daniel-nagy/md-data-table/master/dist/md-data-table.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <title>Do Boond!!</title>
+
+</head>
+<body>
+  <md-toolbar>
+    <div class="md-toolbar-tools colored">
+       <span flex class="flex"></span>
+       <div> some more options (TBD)</div> 
+    </div>
+      <div class="md-toolbar-tools colored" >
+        <h2>
+          <span style="color:white">DO BOOND !! </span>
+        </h2>
+        <span flex class="flex"></span>
+        <div ng-show="isLoggedIn()">
+        Hello<b> {{name}} </b>
+        <md-button  class="md-raised " aria-label="Logout" ng-click="logout()">
+          logout
+        </md-button>
+        </div>
+        <div ng-hide="isLoggedIn()">
+            <md-button ng-click="showDialog('partials/login.html','ctrl1')" class="md-raised md-warn">LOGIN</md-button> 
+            <md-button ng-click="showDialog('partials/register.html','ctrl2')" class="md-raised md-warn">SIGN UP</md-button>
+        </div>
+      </div>
+    </md-toolbar>
+    <md-content layout-padding layout-wrap>
+        <!--div ng-show="isLoggedIn()" ng-include="path"-->
+        
+        <div ng-init= "init()">
+        <div ng-repeat=" product in products" class="column">
+        <md-card md-theme-watch>
+                <md-card-title class="col-head">
+                  <md-card-title-text>
+                    <span class="md-title">{{product.productName}}</span>
+                    <span class="md-subhead">RS. {{product.ProductBasePrice}}</span>
+                  </md-card-title-text>
+                </md-card-title>
+                <md-card-content layout="row" layout-align="space-between">
+                  <div class="md-media-xl card-media"></div>
+
+                  <md-card-actions layout="column">
+                    <img src="images/images/{{product.UPC}}.jpeg" class="col-pic">
+                  </md-card-actions>
+                </md-card-content>
+        </md-card>
+        </div>
+        <div style="clear: both;"></div>
+        </div>
+        
+    </md-content>
+
+</body>
+</html>
